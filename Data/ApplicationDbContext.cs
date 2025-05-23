@@ -93,8 +93,9 @@ namespace Mr_and_Mrs_DineIn.Data
                 new ProductIngredient { ProductId = 2, IngredientId = 6 },
                 new ProductIngredient { ProductId = 3, IngredientId = 3 },
                 new ProductIngredient { ProductId = 3, IngredientId = 4 },
-                new ProductIngredient { ProductId = 4, IngredientId = 5 },
-                new ProductIngredient { ProductId = 4, IngredientId = 6 }
+                new ProductIngredient { ProductId = 3, IngredientId = 5 },
+                new ProductIngredient { ProductId = 3, IngredientId = 6 }
+
                 );
         }
        }

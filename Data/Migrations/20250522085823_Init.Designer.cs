@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mr_and_Mrs_DineIn.Data;
 
@@ -11,9 +12,11 @@ using Mr_and_Mrs_DineIn.Data;
 namespace Mr_and_Mrs_DineIn.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250522085823_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -387,10 +390,6 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -412,7 +411,6 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                             ProductId = 1,
                             CategoryId = 2,
                             Description = "A delicious beef koththu",
-                            ImageUrl = "https://via.placeholder.com/150",
                             Name = "Beef Koththu",
                             Price = 800m,
                             Stock = 100
@@ -422,7 +420,6 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                             ProductId = 2,
                             CategoryId = 2,
                             Description = "A delicious chicken koththu",
-                            ImageUrl = "https://via.placeholder.com/150",
                             Name = "Chicken Koththu",
                             Price = 600m,
                             Stock = 120
@@ -432,7 +429,6 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                             ProductId = 3,
                             CategoryId = 2,
                             Description = "A delicious fish koththu",
-                            ImageUrl = "https://via.placeholder.com/150",
                             Name = "Fish Koththu",
                             Price = 900m,
                             Stock = 80
@@ -506,12 +502,12 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                         },
                         new
                         {
-                            ProductId = 3,
+                            ProductId = 4,
                             IngredientId = 5
                         },
                         new
                         {
-                            ProductId = 3,
+                            ProductId = 4,
                             IngredientId = 6
                         });
                 });
