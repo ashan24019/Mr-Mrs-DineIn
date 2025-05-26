@@ -161,15 +161,6 @@ namespace Mr_and_Mrs_DineIn.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "ProductIngredients",
-                columns: new[] { "IngredientId", "ProductId" },
-                values: new object[,]
-                {
-                    { 5, 4 },
-                    { 6, 4 }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "ProductId", "CategoryId", "Description", "Name", "Price", "Stock" },
                 values: new object[,]
