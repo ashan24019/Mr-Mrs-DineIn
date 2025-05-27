@@ -20,6 +20,14 @@ namespace Mr_and_Mrs_DineIn.Controllers
         public async Task<IActionResult> Details(int id)
         {
             return View(await ingredients.GetByIdAsync(id, new QueryOptions<Ingredient>() { Includes = "ProductIngredients.Product" }));
+
+
+            // Ingredient?create
+            [HttpGet]
+
+            public IActionResult Create()
+            {
+                return View();
+            }
         }
-    }
 }
