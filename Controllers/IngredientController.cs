@@ -28,7 +28,7 @@ namespace Mr_and_Mrs_DineIn.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(); 
         }
 
         [HttpPost]
@@ -65,5 +65,17 @@ namespace Mr_and_Mrs_DineIn.Controllers
         {
             return View(await ingredients.GetByIdAsync(id, new QueryOptions<Ingredient> { Includes = "ProductIngredients.Product"}));
         }
-    }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Edit(Ingredient ingredient)
+        {
+            if (ModelState.IsValid)
+            {
+                await ingredients.UpdateAsync(ingredient);
+                return RedirectToAction("Index");
+            }
+            return View(ingredient);
+        }
 }

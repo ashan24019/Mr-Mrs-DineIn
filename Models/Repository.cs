@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Mr_and_Mrs_DineIn.Data;
 
 namespace Mr_and_Mrs_DineIn.Models
@@ -53,9 +54,10 @@ namespace Mr_and_Mrs_DineIn.Models
             return await query.FirstOrDefaultAsync(e => EF.Property<int>(e, primaryKeyName) == id);
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }
